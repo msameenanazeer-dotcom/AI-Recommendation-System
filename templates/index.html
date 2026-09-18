@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Recommendation</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h1>🎬 AI Movie Recommendation</h1>
+
+<form method="POST">
+
+<select name="category">
+
+<option value="action">Action</option>
+<option value="comedy">Comedy</option>
+<option value="science">Science Fiction</option>
+
+</select>
+
+<button type="submit">Recommend</button>
+
+</form>
+
+{% if recommendations %}
+
+<h2>Recommended Movies</h2>
+
+<ul>
+{% for movie in recommendations %}
+<li>{{ movie }}</li>
+{% endfor %}
+</ul>
+
+{% endif %}
+
+</div>
+
+</body>
+</html>
